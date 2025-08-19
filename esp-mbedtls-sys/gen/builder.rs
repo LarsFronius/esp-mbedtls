@@ -92,8 +92,7 @@ impl MbedtlsBuilder {
 
         if let Some(sysroot_path) = &self.sysroot_path {
             builder = builder.clang_args([
-                //&format!("-I{}", canon(&sysroot_path.join("include"))),
-                &format!("-isystem{}", canon(&sysroot_path.join("include"))),
+                &format!("-I{}", canon(&sysroot_path.join("include"))),
                 &format!("--sysroot={}", canon(sysroot_path)),
             ]);
         }
